@@ -36,41 +36,35 @@ background =    "#120D1E"
 foreground =    "#D9D0E8"
 icons =         "#C87DD4"
 
-#===Terminal===
-
-[tui.cursor]
-shape =                 "beam"
-shape_unfocused =       "hollow"
-beam_thickness =        1.5
-blink_interval =        -1
-stop_blinking_after =   15.0
-trail =                 200
-trail_color =           "none"
-
-[tui.window]
-blur =                  1
-opacity =               0.75
+#===Kitty===
+[kitty]
+font_family =              "Iosevka"
+font_size =                13
+cursor_shape =             "beam"
+cursor_shape_unfocused =   "hollow"
+cursor_beam_thickness =    1.5
+cursor_blink_interval =    -1
+cursor_trail =             200
+window_blur =              1
+window_opacity =           0.75
 
 
-#===Fonts===
-[font]
-family =                "Iosevka"
-bold =                  "auto"
-italic =                "auto"
-bold_italic =           "auto"
-size =                  13
 
 
 #---------------------
 #-----Hyprland--------
 #---------------------
 
-#===Hyprland Specifics===
-[hyprland.general]
-gaps_in = 5
-gaps_out = 20
-border_size = 4
-layout = "dwindle"
-active_gradient = ["colors.normal.purple", "colors.bright.black"]
-inactive_gradient = ["colors.normal.white", "colors.bright.purple"]
+[hyprland]
+gaps_in =      5
+gaps_out =     20
+border_size =  4
+layout =       "dwindle"
+active_gradient =    ["@colors.normal.purple", "@colors.bright.black"]
+inactive_gradient =  ["@colors.normal.white", "@colors.bright.purple"]
 angle = 225
+
+[quickshell]
+font_family =    "Iosevka"
+font_size =      16
+panel_opacity =  0.5
