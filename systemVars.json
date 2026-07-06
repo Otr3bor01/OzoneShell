@@ -1,0 +1,16 @@
+{
+  "workspaceMode": {
+    "type": "enum",
+    "options": ["revolver", "multi-monitor"],
+    "default": "revolver"
+  },
+  "audioFeedback": {
+    "type": "enum",
+    "options": ["none", "beep", "megalovania"],
+    "default": "none"
+  },
+  "batteryWidgetEnabled": {
+    "type": "boolean",
+    "default": true
+  }
+}
