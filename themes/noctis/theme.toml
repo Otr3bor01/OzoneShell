@@ -1,57 +1,215 @@
+#=====================================
+#===NOCTIS===THEME======TOML==========
+#=====================================
 theme_name = "Noctis"
 author = "Otr3bor"
-version = "1.0.0"
+version = "2.0.0"
 
+#---------------------
+#-------Colors--------
+#---------------------
 [colors.normal]
-black =         "#05070D"
-red =           "#8A4E5C"
-green =         "#4E7A6E"
-yellow =        "#8A7E4E"
-purple =        "#3E4E8A"
-pink =          "#5C4E8A"
-blue =          "#2E4A7A"
-white =         "#C0C8D6"
+black =         "#0B0F1A"
+red =           "#B3505A"
+green =         "#4F8A6D"
+yellow =        "#C9A23A"
+purple =        "#4B5FA0"
+pink =          "#5F73C9"
+blue =          "#3A6EA5"
+white =         "#C7D3E8"
 
 [colors.bright]
-black =         "#141A2B"
-red =           "#B0707E"
-green =         "#6EA69A"
-yellow =        "#B0A26E"
-purple =        "#5C6EB0"
-pink =          "#7E6EB0"
-blue =          "#4A6EA6"
-white =         "#E6EAF2"
+black =         "#1B2338"
+red =           "#D97883"
+green =         "#7ABF9E"
+yellow =        "#E8C567"
+purple =        "#7C8FD6"
+pink =          "#8FA0F0"
+blue =          "#6FA8DC"
+white =         "#EAF0FA"
 
 [colors.special]
-background =    "#03040A"
-foreground =    "#C0C8D6"
-icons =         "#4A6EA6"
+background =        "#05070E"
+foreground =        "#C7D3E8"
+icons =             "#6FA8DC"
+accent =            "#6FA8DC"
+border =            "#1F2A44"
+active_border =     "#6FA8DC"
+inactive_border =   "#1F2A44"
+error =             "@colors.normal.red"
+warning =           "@colors.normal.yellow"
+success =           "@colors.normal.green"
 
-[tui.cursor]
-shape =                 "beam"
-shape_unfocused =       "hollow"
-beam_thickness =        1.2
-blink_interval =        -1
-stop_blinking_after =   10.0
-trail =                 50
-trail_color =           "none"
+#---------------------
+#--------Fonts--------
+#---------------------
+[fonts]
+family =            "Iosevka"
+family_mono =        "JetBrainsMono Nerd Font"
+family_icons =        "JetBrainsMono Nerd Font"
+size_small =        12
+size_normal =        16
+size_large =        20
+weight_normal =      "regular"
+weight_bold =        "bold"
 
-[tui.window]
-blur =                  0
-opacity =               0.95
+#---------------------
+#-------Kitty----------
+#---------------------
+[kitty]
+font_family =              "@fonts.family"
+font_size =                13
+bold_font =                "auto"
+italic_font =               "auto"
 
-[font]
-family =                "Iosevka"
-bold =                  "auto"
-italic =                "auto"
-bold_italic =           "auto"
-size =                  13
+background =                "@colors.special.background"
+foreground =                "@colors.special.foreground"
+selection_background =      "@colors.special.accent"
+selection_foreground =      "@colors.special.background"
 
-[hyprland.general]
-gaps_in = 2
-gaps_out = 6
-border_size = 1
-layout = "dwindle"
-active_gradient = ["colors.normal.blue", "colors.bright.black"]
-inactive_gradient = ["colors.normal.black", "colors.normal.black"]
-angle = 0
+cursor =                     "@colors.special.accent"
+cursor_text_color =          "@colors.special.background"
+cursor_shape =               "beam"
+cursor_shape_unfocused =     "hollow"
+cursor_beam_thickness =      1.5
+cursor_blink_interval =      -1
+cursor_trail =                200
+
+url_color =                  "@colors.bright.pink"
+active_border_color =        "@colors.special.active_border"
+inactive_border_color =      "@colors.special.inactive_border"
+
+window_blur =                1
+window_opacity =             0.78
+window_margin_width =        0
+window_padding_width =       8
+
+color0 =  "@colors.normal.black"
+color1 =  "@colors.normal.red"
+color2 =  "@colors.normal.green"
+color3 =  "@colors.normal.yellow"
+color4 =  "@colors.normal.purple"
+color5 =  "@colors.normal.pink"
+color6 =  "@colors.normal.blue"
+color7 =  "@colors.normal.white"
+color8 =  "@colors.bright.black"
+color9 =  "@colors.bright.red"
+color10 = "@colors.bright.green"
+color11 = "@colors.bright.yellow"
+color12 = "@colors.bright.purple"
+color13 = "@colors.bright.pink"
+color14 = "@colors.bright.blue"
+color15 = "@colors.bright.white"
+
+#---------------------
+#------Hyprland--------
+#---------------------
+[hyprland]
+gaps_in =       5
+gaps_out =      20
+border_size =   4
+rounding =      10
+layout =        "dwindle"
+blur_enabled =  true
+blur_size =     10
+blur_passes =   3
+blur_opacity =  "@kitty.window_opacity"
+
+active_gradient =    ["@colors.normal.blue", "@colors.bright.black"]
+inactive_gradient =  ["@colors.normal.white", "@colors.bright.blue"]
+angle =              225
+
+shadow_enabled =  true
+shadow_range =    24
+shadow_color =    "@colors.special.background"
+
+font_family =     "@fonts.family"
+
+#---------------------
+#-----Quickshell-------
+#---------------------
+[quickshell]
+font_family =        "@fonts.family"
+font_family_mono =    "@fonts.family_mono"
+font_family_icons =   "@fonts.family_icons"
+font_size =           "@fonts.size_normal"
+font_size_small =     "@fonts.size_small"
+font_size_large =     "@fonts.size_large"
+
+background =          "@colors.special.background"
+foreground =           "@colors.special.foreground"
+accent =               "@colors.special.accent"
+border =               "@colors.special.border"
+active_border =        "@colors.special.active_border"
+inactive_border =      "@colors.special.inactive_border"
+
+panel_opacity =        0.5
+panel_radius =         100
+panel_border_width =   1.5
+
+icon_active =           "@colors.bright.pink"
+icon_inactive =         "@colors.bright.black"
+
+pulse_color =            "@colors.special.accent"
+error_color =            "@colors.special.error"
+warning_color =          "@colors.special.warning"
+success_color =          "@colors.special.success"
+
+#---------------------
+#--------Fuzzel--------
+#---------------------
+[fuzzel]
+font_family =             "@fonts.family"
+font_size =               "@fonts.size_normal"
+background =              "@colors.special.background"
+foreground =              "@colors.special.foreground"
+
+border_color =            "@colors.special.active_border"
+border_width =            2
+border_radius =           12
+
+selection_color =         "@colors.special.accent"
+selection_text_color =    "@colors.special.background"
+selection_match_color =   "@colors.bright.pink"
+
+match_color =              "@colors.bright.pink"
+placeholder_color =        "@colors.bright.black"
+prompt_color =              "@colors.special.accent"
+
+icon_theme =               "Papirus-Dark"
+
+#---------------------
+#---------Cava----------
+#---------------------
+[cava]
+background =              "@colors.special.background"
+foreground =               "@colors.special.foreground"
+
+gradient_enabled =    true
+gradient_color_1 =    "@colors.normal.blue"
+gradient_color_2 =    "@colors.bright.blue"
+gradient_color_3 =    "@colors.bright.pink"
+
+bar_width =            2
+bar_spacing =          1
+bars =                 40
+
+#---------------------
+#-------Fastfetch--------
+#---------------------
+[fastfetch]
+logo_color_1 =         "@colors.special.accent"
+logo_color_2 =          "@colors.bright.blue"
+logo_padding_left =     2
+
+key_color =             "@colors.special.accent"
+value_color =           "@colors.special.foreground"
+separator =             "  "
+separator_color =       "@colors.special.border"
+
+title_color =            "@colors.bright.pink"
+os_color =               "@colors.bright.blue"
+
+color_block_width =      3
+color_block_range_start = 0
+color_block_range_end =   15

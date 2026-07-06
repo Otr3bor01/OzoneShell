@@ -3,12 +3,12 @@ local theme = require("state.theme")
 
 hl.config({
     general = {
-        gaps_in = theme.gapsIn,
-        gaps_out = theme.gapsOut,
-        border_size = theme.borderSize,
+        gaps_in = theme.gaps_in,
+        gaps_out = theme.gaps_out,
+        border_size = theme.border_size,
         col = {
-            inactive_border = { colors = theme.inactiveGradient, angle = theme.angle },
-            active_border = { colors = theme.activeGradient, angle = theme.angle }
+            inactive_border = { colors = theme.inactive_gradient, angle = theme.angle },
+            active_border = { colors = theme.active_gradient, angle = theme.angle }
         },
         resize_on_border = true,
         layout = theme.layoutType,
