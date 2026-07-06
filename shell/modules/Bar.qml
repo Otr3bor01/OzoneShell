@@ -10,5 +10,7 @@ PanelWindow {
         top: true;
         right: true;
     }
-    WorkspaceIndicator {}
+    Row{
+        WorkspaceIndicator {}
+    }
 }

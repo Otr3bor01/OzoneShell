@@ -8,10 +8,10 @@ Rectangle {
     id: root
     implicitWidth: 290
     implicitHeight: 35
-    color: Qt.rgba(18/255, 13/255, 30/255, 0.5)
-    radius: 100
+    color: Qt.rgba(Theme.background.red, Theme.background.green, Theme.background.blue, Theme.panelOpacity) //Do i want this to be a fixed color? 
+    radius: Theme.panelRadius
     border.color: monitorState.text().trim() === "false" ? Theme.activeBorder : Theme.inactiveBorder
-    border.width: 1.5
+    border.width: Theme.panelBorderWidth
 
     FileView {
         id: monitorState
