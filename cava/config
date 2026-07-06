@@ -1,0 +1,27 @@
+
+[general]
+
+
+sensitivity = 100
+
+
+[color]
+
+
+ gradient = 1
+ gradient_color_1 = '#D9D0E8'
+ gradient_color_2 = '#CFA9DE'
+ gradient_color_3 = '#C87DD4'
+ gradient_color_4 = '#AA60B8'
+ gradient_color_5 = '#8A459C'
+ gradient_color_6 = '#6A3180'
+ gradient_color_7 = '#4E2C64'
+ gradient_color_8 = '#352748'
+
+
+
+[smoothing]
+
+noise_reduction = 75
+
+

@@ -1,0 +1,57 @@
+theme_name = "Noctis"
+author = "Otr3bor"
+version = "1.0.0"
+
+[colors.normal]
+black =         "#05070D"
+red =           "#8A4E5C"
+green =         "#4E7A6E"
+yellow =        "#8A7E4E"
+purple =        "#3E4E8A"
+pink =          "#5C4E8A"
+blue =          "#2E4A7A"
+white =         "#C0C8D6"
+
+[colors.bright]
+black =         "#141A2B"
+red =           "#B0707E"
+green =         "#6EA69A"
+yellow =        "#B0A26E"
+purple =        "#5C6EB0"
+pink =          "#7E6EB0"
+blue =          "#4A6EA6"
+white =         "#E6EAF2"
+
+[colors.special]
+background =    "#03040A"
+foreground =    "#C0C8D6"
+icons =         "#4A6EA6"
+
+[tui.cursor]
+shape =                 "beam"
+shape_unfocused =       "hollow"
+beam_thickness =        1.2
+blink_interval =        -1
+stop_blinking_after =   10.0
+trail =                 50
+trail_color =           "none"
+
+[tui.window]
+blur =                  0
+opacity =               0.95
+
+[font]
+family =                "Iosevka"
+bold =                  "auto"
+italic =                "auto"
+bold_italic =           "auto"
+size =                  13
+
+[hyprland.general]
+gaps_in = 2
+gaps_out = 6
+border_size = 1
+layout = "dwindle"
+active_gradient = ["colors.normal.blue", "colors.bright.black"]
+inactive_gradient = ["colors.normal.black", "colors.normal.black"]
+angle = 0

@@ -1,0 +1,57 @@
+theme_name = "Crimson"
+author = "Otr3bor"
+version = "1.0.0"
+
+[colors.normal]
+black =         "#1A0505"
+red =           "#B3222F"
+green =         "#4E7A3E"
+yellow =        "#B3821E"
+purple =        "#7A3E5C"
+pink =          "#A0455C"
+blue =          "#6E5C7A"
+white =         "#E8D0D0"
+
+[colors.bright]
+black =         "#3B1414"
+red =           "#E84C58"
+green =         "#7ABF6E"
+yellow =        "#E8B84A"
+purple =        "#B06F95"
+pink =          "#D46F8A"
+blue =          "#9E8AB0"
+white =         "#F9EEEE"
+
+[colors.special]
+background =    "#0D0303"
+foreground =    "#E8D0D0"
+icons =         "#E84C58"
+
+[tui.cursor]
+shape =                 "block"
+shape_unfocused =       "hollow"
+beam_thickness =        2.0
+blink_interval =        0
+stop_blinking_after =   0
+trail =                 300
+trail_color =           "none"
+
+[tui.window]
+blur =                  0
+opacity =               1.0
+
+[font]
+family =                "JetBrainsMono Nerd Font"
+bold =                  "auto"
+italic =                "auto"
+bold_italic =           "auto"
+size =                  14
+
+[hyprland.general]
+gaps_in = 3
+gaps_out = 12
+border_size = 2
+layout = "master"
+active_gradient = ["colors.bright.red", "colors.normal.black"]
+inactive_gradient = ["colors.normal.black", "colors.normal.black"]
+angle = 90

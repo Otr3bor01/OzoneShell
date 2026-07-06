@@ -35,9 +35,11 @@ STATE_DIR = REPO_ROOT / "state"
 LINKS: dict[Path, Path] = {
     REPO_ROOT / "hypr": Path("~/.config/hypr").expanduser(),
     REPO_ROOT / "kitty": Path("~/.config/kitty").expanduser(),
-    REPO_ROOT / "shell": Path("~/.config/quickshell/ozone").expanduser(),
+    REPO_ROOT / "shell": Path("~/.config/quickshell").expanduser(),
+    REPO_ROOT / "fastfetch": Path("~/.config/fastfetch").expanduser(),
+    REPO_ROOT / "cava": Path("~/.config/cava").expanduser(),
+    REPO_ROOT / "fuzzel": Path("~/.config/fuzzel").expanduser(),
 }
-
 
 # ============================================================
 # DETECTION

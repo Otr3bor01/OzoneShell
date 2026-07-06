@@ -1,0 +1,57 @@
+theme_name = "Verdant"
+author = "Otr3bor"
+version = "1.0.0"
+
+[colors.normal]
+black =         "#0F1A12"
+red =           "#B0524A"
+green =         "#3E8A54"
+yellow =        "#9E9E3E"
+purple =        "#5C7A5C"
+pink =          "#7A9E6E"
+blue =          "#4A7A6E"
+white =         "#DCE8DC"
+
+[colors.bright]
+black =         "#233B27"
+red =           "#D67268"
+green =         "#5CBF7A"
+yellow =        "#C9C95C"
+purple =        "#7EA07E"
+pink =          "#9ECB8E"
+blue =          "#6EA69A"
+white =         "#F0F9EE"
+
+[colors.special]
+background =    "#0A130C"
+foreground =    "#DCE8DC"
+icons =         "#5CBF7A"
+
+[tui.cursor]
+shape =                 "underline"
+shape_unfocused =       "hollow"
+beam_thickness =        1.0
+blink_interval =        -1
+stop_blinking_after =   20.0
+trail =                 100
+trail_color =           "none"
+
+[tui.window]
+blur =                  1
+opacity =               0.9
+
+[font]
+family =                "FiraCode Nerd Font"
+bold =                  "auto"
+italic =                "auto"
+bold_italic =           "auto"
+size =                  12
+
+[hyprland.general]
+gaps_in = 8
+gaps_out = 28
+border_size = 3
+layout = "dwindle"
+active_gradient = ["colors.normal.green", "colors.bright.blue"]
+inactive_gradient = ["colors.normal.black", "colors.normal.green"]
+angle = 135

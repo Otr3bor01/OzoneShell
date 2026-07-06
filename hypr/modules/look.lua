@@ -1,17 +1,17 @@
-local theme = require("currentTheme")
+local theme = require("state.theme")
 
 
 hl.config({
     general = {
-        gaps_in = 5,
-        gaps_out = 20,
-        border_size = 4,
+        gaps_in = theme.gapsIn,
+        gaps_out = theme.gapsOut,
+        border_size = theme.borderSize,
         col = {
-            inactive_border = { colors = {"rgb(5C4BA0)", "rgb(352748)"}, angle = 225},
-            active_border = {colors = {"rgb(D9D0E8)", "rgb(C87DD4)"}, angle = 225}
+            inactive_border = { colors = theme.inactiveGradient, angle = theme.angle },
+            active_border = { colors = theme.activeGradient, angle = theme.angle }
         },
         resize_on_border = true,
-        layout = "dwindle",
+        layout = theme.layoutType,
     },
     decoration = {
         rounding       = 10,
