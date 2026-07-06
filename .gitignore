@@ -1,0 +1,16 @@
+ozone.json
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+venv/
+env/
+.env
+*.qmlc
+*.jsc
+.qmake.stash
+.vscode/
+.idea/
+*.swp
+.DS_Store
+state/
