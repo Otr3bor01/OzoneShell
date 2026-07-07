@@ -3,14 +3,19 @@ import Quickshell
 import Quickshell.Io
 import Quickshell.Hyprland
 import qs.singletons
+import qs.components
 
 Rectangle {
     id: root
-    implicitWidth: 290
-    implicitHeight: 35
-    color: Qt.rgba(Theme.background.red, Theme.background.green, Theme.background.blue, Theme.panelOpacity) //Do i want this to be a fixed color? 
+    property int wsMin: 1
+    property int wsMax: 5
+    property string activeMonitorValue: "false"
+
+    implicitWidth: wsRow.width
+
+    color: Qt.alpha(Theme.background, Theme.panelOpacity) //Do i want this to be a fixed color? 
     radius: Theme.panelRadius
-    border.color: monitorState.text().trim() === "false" ? Theme.activeBorder : Theme.inactiveBorder
+    border.color: monitorState.text().trim() === root.activeMonitorValue ? Theme.activeBorder : Theme.inactiveBorder
     border.width: Theme.panelBorderWidth
 
     FileView {
@@ -21,30 +26,14 @@ Rectangle {
     }
 
     Row {
-        anchors.fill: parent
+        id: wsRow
         anchors.centerIn: parent
         spacing: 6
         padding: 8
+
         Repeater {
-            model: Hyprland.workspaces.values.filter(ws => ws.id > 0 && ws.id <= 5)
-            delegate: Rectangle {
-                width: 50
-                height: 10
-                radius: 5
-                color: modelData.active ? Theme.accent : Qt.rgba(18/255, 13/255, 30/255, 0.5)
-                border.color: modelData.active
-                    ? Theme.foreground
-                    : mouseArea.containsMouse ? Qt.rgba(0.85, 0.82, 0.91, 0.5) : "#2C2C2E"
-                border.width: 2
-                anchors.verticalCenter: parent.verticalCenter
-                MouseArea {
-                    id: mouseArea
-                    anchors.fill: parent
-                    hoverEnabled: true
-                    cursorShape: Qt.PointingHandCursor
-                    onClicked: Hyprland.dispatch("hl.dsp.focus({ workspace = " + modelData.id + " })")
-                }
-            }
+            model: Hyprland.workspaces.values.filter(ws => ws.id > root.wsMin - 1 && ws.id <= root.wsMax)
+            delegate: WorkspaceButton {}             
         }
     }
 }

@@ -1,0 +1,3 @@
+module qs.components
+WorkspaceButton 1.0 WorkspaceButton.qml
+WorkspaceIndicator 1.0 WorkspaceIndicator.qml
