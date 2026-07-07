@@ -22,6 +22,7 @@ As this project is still in its early stages, I am currently using some AI-gener
 AI is also being used to generate some test TOML files, which will later be rewritten by me according to my own style.
 
 Occasionally, AI is used during the formatting process.
+
 ---
 
 ## Stack
