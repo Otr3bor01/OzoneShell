@@ -1,4 +1,4 @@
-#currently AI made!
+#currently mostly AI made!
 
 #!/usr/bin/env python3
 """
