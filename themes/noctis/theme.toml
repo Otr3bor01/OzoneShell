@@ -2,6 +2,7 @@
 #===NOCTIS===THEME======TOML==========
 #=====================================
 theme_name = "Noctis"
+theme_symbol = ""
 author = "Otr3bor"
 version = "2.0.0"
 

@@ -2,6 +2,7 @@
 #===CRIMSON===THEME======TOML=========
 #=====================================
 theme_name = "Crimson"
+theme_symbol = "󰈸"
 author = "Otr3bor"
 version = "2.0.0"
 

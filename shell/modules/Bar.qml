@@ -9,10 +9,10 @@ PanelWindow {
     property int wsMax: 5
     property string activeMonitorValue: "false"
 
-    exclusiveZone: 20
+    exclusiveZone: 30
     screen: targetScreen
     aboveWindows: false
-    implicitHeight: 40
+    implicitHeight: 45
     margins {
         top: 5
         left: 10
@@ -26,18 +26,26 @@ PanelWindow {
     }
 
     WorkspaceIndicator {
+        id: wsIndicator
+        wsMin: root.wsMin
+        wsMax: root.wsMax
+        activeMonitorValue: root.activeMonitorValue
+
         anchors {
             left: parent.left
             top: parent.top
             bottom: parent.bottom
             margins: 5
         }
-
-
-        id: wsIndicator
-        wsMin: root.wsMin
-        wsMax: root.wsMax
-        activeMonitorValue: root.activeMonitorValue
     }
     
+    CentralIsland {
+        id: centralIsland
+        anchors {
+            horizontalCenter: parent.horizontalCenter
+            top: parent.top
+            bottom: parent.bottom
+            margins: 5
+        }
+    }
 }

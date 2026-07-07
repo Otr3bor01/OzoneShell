@@ -2,6 +2,7 @@
 #===PANSY====THEME======TOML==========
 #=====================================
 theme_name = "Pansy"
+theme_symbol = "✿"
 author = "Otr3bor"
 version = "2.0.0"
 

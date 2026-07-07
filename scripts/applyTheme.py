@@ -172,6 +172,7 @@ def generateQuickshellJson(theme: dict[str, Any]) -> str:
     """Quickshell legge JSON già risolto: nessun riferimento '@' da capire lato QML."""
     payload = {
         "theme_name": theme.get("theme_name"),
+        "theme_symbol": theme.get("theme_symbol"),
         "colors": theme.get("colors", {}),
         "fonts": theme.get("fonts", {}),
         "quickshell": theme.get("quickshell", {}),

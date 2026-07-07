@@ -2,6 +2,7 @@
 #===VERDANT===THEME======TOML=========
 #=====================================
 theme_name = "Verdant"
+theme_symbol = "󰌪"
 author = "Otr3bor"
 version = "2.0.0"
 

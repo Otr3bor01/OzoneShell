@@ -10,6 +10,7 @@ QtObject {
     property var _data: ({})
 
     readonly property string themeName: _data.theme_name ?? "Ozone"
+    readonly property string themeSymbol: _data.theme_symbol ?? "󰯙"
 
     //=====================
     //===Colors: normal====
