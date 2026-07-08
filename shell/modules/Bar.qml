@@ -49,4 +49,15 @@ PanelWindow {
         }
     }
 
+    RightButtonsRow {
+        id: rightButtonsRow
+        anchors {
+            right: parent.right
+            top: parent.top
+            bottom: parent.bottom
+            margins: 5
+        }
+    }
+    
+
 }

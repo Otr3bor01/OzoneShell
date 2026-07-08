@@ -5,3 +5,5 @@ CentralIsland 1.0 CentralIsland.qml
 ThemeDisplay 1.0 ThemeDisplay.qml
 BarMediaPlayer 1.0 BarMediaPlayer.qml
 DateTime 1.0 DateTime.qml
+MenuButton 1.0 MenuButton.qml
+RightButtonsRow 1.0 RightButtonsRow.qml
