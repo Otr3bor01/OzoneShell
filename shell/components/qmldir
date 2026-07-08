@@ -7,3 +7,4 @@ BarMediaPlayer 1.0 BarMediaPlayer.qml
 DateTime 1.0 DateTime.qml
 MenuButton 1.0 MenuButton.qml
 RightButtonsRow 1.0 RightButtonsRow.qml
+Volume 1.0 Volume.qml
