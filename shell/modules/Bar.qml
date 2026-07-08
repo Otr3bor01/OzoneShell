@@ -8,11 +8,11 @@ PanelWindow {
     property int wsMin: 1
     property int wsMax: 5
     property string activeMonitorValue: "false"
-
-    exclusiveZone: 30
+    color: "transparent"
+    exclusiveZone: 35
     screen: targetScreen
     aboveWindows: false
-    implicitHeight: 45
+    implicitHeight: 50
     margins {
         top: 5
         left: 10
@@ -49,14 +49,4 @@ PanelWindow {
         }
     }
 
-    BarMediaPlayer {
-        id: barMediaPlayer
-        anchors {   
-            top: parent.top
-            horizontalCenter: parent.horizontalCenter
-            bottom: parent.bottom
-            margins: 5
-        }
-    }
-    
 }
