@@ -48,4 +48,15 @@ PanelWindow {
             margins: 5
         }
     }
+
+    BarMediaPlayer {
+        id: barMediaPlayer
+        anchors {   
+            top: parent.top
+            horizontalCenter: parent.horizontalCenter
+            bottom: parent.bottom
+            margins: 5
+        }
+    }
+    
 }

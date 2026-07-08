@@ -3,3 +3,4 @@ WorkspaceButton 1.0 WorkspaceButton.qml
 WorkspaceIndicator 1.0 WorkspaceIndicator.qml
 CentralIsland 1.0 CentralIsland.qml
 ThemeDisplay 1.0 ThemeDisplay.qml
+BarMediaPlayer 1.0 BarMediaPlayer.qml
