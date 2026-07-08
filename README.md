@@ -1,3 +1,8 @@
+<div align="center">
+  <img src="https://github.com/Otr3bor01/OzoneShell/blob/main/logo/OzoneShell.svg" alt="Logo Ozone" width="400"/>
+</div>
+
+
 # OzoneShell
 
 A desktop shell for Arch Linux built on **Hyprland** and **Quickshell** (QML), with a hand-written TOML theming system and a Python pipeline that generates configuration for every program from a single source of truth.
