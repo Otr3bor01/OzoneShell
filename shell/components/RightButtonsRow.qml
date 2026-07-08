@@ -5,6 +5,13 @@ import qs.components
 import qs.singletons
 
 RowLayout {
+    Updates {
+        id: updates
+        baseWidth: 65
+        hoverWidth: 70
+    }
+
+
     Volume {
         id: volume
         baseWidth: 65
