@@ -29,8 +29,9 @@ Item{   //menù work in progress
             id: archMenuMouse
             anchors.fill: parent
             hoverEnabled: true
+            onClicked: UiState.settingsOpen = !UiState.settingsOpen
         }
-        
+
         states: [
             State {
                 name: "hovered"

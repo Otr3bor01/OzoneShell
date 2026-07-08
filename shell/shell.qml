@@ -21,4 +21,9 @@ ShellRoot {
         wsMax: 10
         activeMonitorValue: "true"
     }
+
+    Loader {
+        active: UiState.settingsOpen
+        sourceComponent: SettingsWindow {}
+    }
 }

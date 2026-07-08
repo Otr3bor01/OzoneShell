@@ -14,7 +14,6 @@ Item {
 
     width: hoverWidth
     height: baseWidth - 30
-    anchors.verticalCenter: parent.verticalCenter
 
     Timer {
         interval: 600000

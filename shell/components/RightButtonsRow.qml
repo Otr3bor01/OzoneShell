@@ -12,7 +12,6 @@ RowLayout {
         hoverWidth: 70
     }
 
-
     Volume {
         id: volume
         baseWidth: 65

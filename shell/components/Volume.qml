@@ -131,15 +131,16 @@ Item {
         ]
 
         Text {
-            property var volSym: (vol.sink.audio.muted) ? "󰝟 ":
-                                 (vol.currentVolume*100) === 0 ? "󰖁 " :
-                                 (vol.currentVolume * 100) < 33 ? "󰕿 ":
-                                 (vol.currentVolume * 100) < 66 ? "󰖀 ": "󰕾 "
+            property var volSym: !vol.sink ? "󰖁 " :
+                                vol.sink.audio.muted ? "󰝟 ":
+                                (vol.currentVolume*100) === 0 ? "󰖁 " :
+                                (vol.currentVolume * 100) < 33 ? "󰕿 ":
+                                (vol.currentVolume * 100) < 66 ? "󰖀 ": "󰕾 "
 
             anchors.centerIn: parent
             text: volSym + Math.round(vol.currentVolume*100) + "%"
             color: vol.currentVolume == 0 ? "#FF0000" :
-                   vol.sink.audio.muted ? "#FF0000" : Theme.icons
+                vol.sink?.audio.muted ? "#FF0000" : Theme.icons
             font.family: Theme.fontFamily
             font.pixelSize: 16
         }
