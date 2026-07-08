@@ -5,6 +5,7 @@ import qs.components
 import qs.singletons
 
 RowLayout {
+    spacing: 5
     Updates {
         id: updates
         baseWidth: 65
