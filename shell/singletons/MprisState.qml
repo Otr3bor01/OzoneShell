@@ -7,10 +7,10 @@ QtObject {
     id: root
 
     property var activePlayer: null
-    property var _playOrder: []   // player più recente in testa
+    property var _playOrder: []   //most recent player first
 
     function _notifyStarted(player) {
-        // rimuove eventuali occorrenze precedenti e lo rimette in testa
+        // put again the player that just started at the top of the list, so it will be preferred if still playing
         root._playOrder = [player].concat(root._playOrder.filter(p => p !== player));
         root.updateActivePlayer();
     }
@@ -18,10 +18,10 @@ QtObject {
     function updateActivePlayer() {
         var players = (Mpris && Mpris.players) ? Mpris.players.values : [];
 
-        // pulisce _playOrder da player non più esistenti
+        // remove non-existing players from the play order list
         root._playOrder = root._playOrder.filter(p => players.some(pl => pl === p));
 
-        // cerca, in ordine di "ultimo avviato", il primo ancora in Playing
+        // last started player that is still playing is the preferred one
         var candidate = null;
         for (var i = 0; i < root._playOrder.length; i++) {
             if (root._playOrder[i].playbackState === MprisPlayer.Playing) {
@@ -31,7 +31,7 @@ QtObject {
         }
 
         if (!candidate) {
-            // nessuno in play tra quelli tracciati: fallback al primo Playing trovato nella lista grezza
+            // no one is playing among the tracked players: fallback to the first Playing player found in the raw list
             for (var j = 0; j < players.length; j++) {
                 if (players[j].playbackState === MprisPlayer.Playing) {
                     candidate = players[j];
