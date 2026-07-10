@@ -4,3 +4,5 @@ singleton Settings 1.0 Settings.qml
 singleton MprisState 1.0 MprisState.qml
 singleton SoundFeedback 1.0 SoundFeedback.qml
 singleton UiState 1.0 UiState.qml
+singleton ThemeIndex 1.0 ThemeIndex.qml
+singleton Paths 1.0 Paths.qml

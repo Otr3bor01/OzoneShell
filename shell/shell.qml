@@ -26,4 +26,6 @@ ShellRoot {
         active: UiState.settingsOpen
         sourceComponent: SettingsWindow {}
     }
+
+    ThemeSelector {}
 }

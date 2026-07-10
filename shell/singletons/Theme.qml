@@ -83,7 +83,7 @@ QtObject {
     // default property" (come già visto in passato).
     property FileView themeFile: FileView {
         id: themeFile
-        path: "/home/otr3bor/.config/quickshell/state/theme.json"
+        path: Paths.themeFile
         watchChanges: true
         onFileChanged: reload()
         onLoaded: {
