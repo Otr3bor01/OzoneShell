@@ -1,6 +1,6 @@
 //Ai re-made, WIP
 import QtQuick
-import Quickshell.Io
+import Quickshell
 import qs.singletons
 
 Item {
@@ -38,6 +38,8 @@ Item {
 
     onThemesChanged: canvas.requestPaint()
     
+
+
     Canvas {
         id: canvas
         anchors.fill: parent
@@ -98,9 +100,7 @@ Item {
                 var themeFile = root.themes[idx].file
                 root.sliceClicked(idx)
                 root.themeSelected(themeFile)
-
-                applyThemeProcess.command = ["python3", Paths.applyThemeScript, themeFile]
-                applyThemeProcess.running = true
+                Quickshell.execDetached(["python3", Paths.applyThemeScript, themeFile])
             }
         }
     }
