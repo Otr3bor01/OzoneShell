@@ -73,3 +73,4 @@ hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_S
 hl.bind(vars.mainMod .. " + F3",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
 hl.bind(vars.mainMod .. " + F2", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind(vars.mainMod .. " + F1",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
+hl.bind(vars.mainMod .. " + less", hl.dsp.exec_cmd("qs ipc call themeSelector toggle"))

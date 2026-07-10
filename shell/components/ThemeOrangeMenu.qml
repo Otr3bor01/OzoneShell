@@ -1,4 +1,6 @@
+//Ai re-made, WIP
 import QtQuick
+import Quickshell.Io
 import qs.singletons
 
 Item {
@@ -10,11 +12,9 @@ Item {
     // Radius (just while making)
     property int raggio: 500
 
-    // Slice Configuration — derivato dai temi disponibili
     readonly property var themes: ThemeIndex.themes
     readonly property int sliceCount: themes.length
 
-    // State
     property int hoveredIndex: -1
 
     readonly property real cx: width / 2
@@ -24,7 +24,6 @@ Item {
     signal sliceClicked(int index)
     signal themeSelected(string themeFile)
 
-    // Calcola quale spicchio corrisponde a un punto (mx, my)
     function sliceIndexAt(mx, my) {
         if (sliceCount === 0) return -1
         var dx = mx - cx
@@ -37,9 +36,8 @@ Item {
         return Math.floor(angle / sliceAngle)
     }
 
-    // Ridisegna se la lista temi cambia (es. FileView watchChanges triggera reload)
     onThemesChanged: canvas.requestPaint()
-
+    
     Canvas {
         id: canvas
         anchors.fill: parent
@@ -66,7 +64,6 @@ Item {
                 ctx.lineWidth = 2
                 ctx.stroke()
 
-                // Etichetta: simbolo + nome, col colore foreground del tema stesso
                 var mid = start + sliceAngle / 2
                 var labelR = root.radius * 0.65
                 var lx = root.cx + labelR * Math.cos(mid)
@@ -98,8 +95,12 @@ Item {
         onClicked: {
             var idx = root.sliceIndexAt(mouseX, mouseY)
             if (idx >= 0) {
+                var themeFile = root.themes[idx].file
                 root.sliceClicked(idx)
-                root.themeSelected(root.themes[idx].file)
+                root.themeSelected(themeFile)
+
+                applyThemeProcess.command = ["python3", Paths.applyThemeScript, themeFile]
+                applyThemeProcess.running = true
             }
         }
     }

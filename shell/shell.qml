@@ -1,5 +1,6 @@
 import Quickshell
 import QtQuick
+import Quickshell.Io
 import qs.components
 import qs.modules
 import qs.singletons
@@ -26,6 +27,25 @@ ShellRoot {
         active: UiState.settingsOpen
         sourceComponent: SettingsWindow {}
     }
+    Loader {
+        active: UiState.themeMenuOpen
+        sourceComponent: ThemeSelector {}
+    }
 
-    ThemeSelector {}
+
+    IpcHandler {
+        target: "themeSelector"
+
+        function toggle(): void {
+            UiState.toogleThemeMenu()
+        }
+
+        function show(): void {
+            UiState.themeMenuOpen = true
+        }
+
+        function hide(): void {
+            UiState.themeMenuOpen = false
+        }
+    }
 }
