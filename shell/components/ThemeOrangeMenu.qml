@@ -1,6 +1,7 @@
-//Ai re-made, WIP
+// AI re-made, WIP
 import QtQuick
 import Quickshell
+import Quickshell.Io
 import qs.singletons
 
 Item {
@@ -37,8 +38,40 @@ Item {
     }
 
     onThemesChanged: canvas.requestPaint()
-    
 
+    // Runs applyTheme.py and only signals completion once the process
+    // has actually exited, instead of firing-and-forgetting like
+    // Quickshell.execDetached did. This removes the race condition
+    // where the menu/theme index was read before the script finished.
+    Process {
+        id: applyThemeProcess
+
+        property string pendingThemeFile: ""
+        property bool busy: false
+
+        command: ["python3", Paths.applyThemeScript, pendingThemeFile]
+
+        onExited: (exitCode, exitStatus) => {
+            busy = false
+            if (exitCode === 0) {
+                // Safety net: force a re-read in case the FileView's
+                // watcher missed or debounced the change.
+                ThemeIndex.reload()
+            } else {
+                console.warn("applyTheme.py exited with code", exitCode)
+            }
+        }
+
+        function run(themeFile) {
+            if (busy) {
+                console.warn("applyThemeProcess already running, ignoring click")
+                return
+            }
+            pendingThemeFile = themeFile
+            busy = true
+            running = true
+        }
+    }
 
     Canvas {
         id: canvas
@@ -100,8 +133,9 @@ Item {
                 var themeFile = root.themes[idx].file
                 root.sliceClicked(idx)
                 root.themeSelected(themeFile)
-                Quickshell.execDetached(["python3", Paths.applyThemeScript, themeFile])
+                applyThemeProcess.run(themeFile)
             }
+            canvas.requestPaint()
         }
     }
 }

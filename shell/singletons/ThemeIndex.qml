@@ -6,8 +6,13 @@ import qs.singletons
 Singleton {
     id: root
     property var themes: []
+    
+    function reload() {
+        fileView.reload()
+    }
 
     FileView {
+        id: fileView
         path: Paths.themeIndexFile
         watchChanges: true
         onFileChanged: reload()
