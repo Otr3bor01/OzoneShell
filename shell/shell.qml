@@ -48,4 +48,11 @@ ShellRoot {
             UiState.themeMenuOpen = false
         }
     }
+
+    IpcHandler {
+        target: "settingsWindow"
+        function toggle(): void{
+            UiState.toggleSettings()
+        }
+    }
 }
