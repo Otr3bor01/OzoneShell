@@ -11,7 +11,7 @@
     "type": "enum",
     "options": [
       "none",
-      "beep",
+      "pop",
       "megalovania"
     ],
     "default": "none"

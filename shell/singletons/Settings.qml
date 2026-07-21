@@ -7,13 +7,31 @@ import Quickshell.Io
 QtObject {
     id: root
 
-    readonly property string workspaceMode: _data.workspaceMode ?? "revolver"
-    readonly property string audioFeedback: _data.audioFeedback ?? "none"
-    readonly property bool batteryWidgetEnabled: _data.batteryWidgetEnabled ?? true
-    readonly property string primaryMonitor: _data.primaryMonitor ?? "DP-1"
-    readonly property string secondaryMonitor: _data.secondaryMonitor ?? "DP-2"
+    property string workspaceMode: "revolver"
+    property string audioFeedback: "none"
+    property bool batteryWidgetEnabled: true
+    property string primaryMonitor: "DP-1"
+    property string secondaryMonitor: "DP-2"
 
     property var _data: ({})
+
+    function reload() {
+        try {
+            root._data = JSON.parse(settingsFile.text())
+            updateProperties()
+            console.log("Settings reloaded:", JSON.stringify(root._data))
+        } catch (e) {
+            console.warn("Settings.qml: Errore nel reload", e)
+        }
+    }
+
+    function updateProperties() {
+        workspaceMode = _data.workspaceMode ?? "revolver"
+        audioFeedback = _data.audioFeedback ?? "none"
+        batteryWidgetEnabled = _data.batteryWidgetEnabled ?? true
+        primaryMonitor = _data.primaryMonitor ?? "DP-1"
+        secondaryMonitor = _data.secondaryMonitor ?? "DP-2"
+    }
 
     property FileView settingsFile: FileView {
         id: settingsFile
@@ -23,6 +41,8 @@ QtObject {
         onLoaded: {
             try {
                 root._data = JSON.parse(text())
+                updateProperties()
+                console.log("Settings loaded:", JSON.stringify(root._data))
             } catch (e) {
                 console.warn("Settings.qml: JSON non valido, mantengo i valori precedenti", e)
             }
