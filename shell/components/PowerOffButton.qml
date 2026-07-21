@@ -31,7 +31,7 @@ Item{
             id: powerOffMouse
             anchors.fill: parent
             hoverEnabled: true
-            onClicked: Quickshell.execDetached(["systemctl poweroff"])
+            onClicked: Quickshell.execDetached(["systemctl", "poweroff"])
         }
 
         states: [

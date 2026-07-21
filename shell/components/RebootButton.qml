@@ -31,7 +31,7 @@ Item{
             id: rebootMouse
             anchors.fill: parent
             hoverEnabled: true
-            onClicked: Quickshell.execDetached(["systemctl reboot"])
+            onClicked: Quickshell.execDetached(["systemctl", "reboot"])
         }
 
         states: [
