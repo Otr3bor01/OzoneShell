@@ -25,5 +25,11 @@ PanelWindow {
             PowerOffButton{}
             RebootButton{}
         }
+        MenuExit{
+            anchors.top :parent.top
+            anchors.right : parent.right
+            anchors.topMargin: 5
+            anchors.rightMargin: 5
+        }
     }
 }
