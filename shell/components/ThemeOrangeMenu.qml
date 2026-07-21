@@ -135,7 +135,6 @@ Item {
                 root.themeSelected(themeFile)
                 applyThemeProcess.run(themeFile)
             }
-            canvas.requestPaint()
         }
     }
 }
