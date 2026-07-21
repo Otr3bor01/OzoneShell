@@ -10,3 +10,5 @@ RightButtonsRow 1.0 RightButtonsRow.qml
 Volume 1.0 Volume.qml
 Updates 1.0 Updates.qml
 ThemeOrangeMenu 1.0 ThemeOrangeMenu.qml
+PowerOffButton 1.0 PowerOffButton.qml
+RebootButton 1.0 RebootButton.qml

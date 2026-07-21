@@ -1,6 +1,7 @@
 import qs.singletons
 import QtQuick
 import Quickshell
+import QtQuick.Layouts
 import qs.components
 PanelWindow {
     anchors { } //floating
@@ -17,16 +18,12 @@ PanelWindow {
         border.color: Theme.border
         border.width: Theme.panelBorderWidth * 3
         //blah blah blah gui
-        Item {
+        ColumnLayout {
+            anchors.left: parent.left
             anchors.verticalCenter: parent.verticalCenter
-            transform: Rotation {origin.x: 25; origin.y: 25; angle: 45}
-            Text {
-                text: "Blah Blah WIP"
-                color: Theme.accent
-                font.family: Theme.fontFamily
-                font.pixelSize: 50
-                font.bold: true
-            }
+            anchors.leftMargin: 5
+            PowerOffButton{}
+            RebootButton{}
         }
     }
 }
