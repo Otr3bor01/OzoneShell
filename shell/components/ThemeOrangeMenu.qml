@@ -62,7 +62,7 @@ Item {
                 var baseColor = theme.background
                 ctx.fillStyle = (i === root.hoveredIndex) ? Qt.lighter(baseColor, 1.3) : baseColor
                 ctx.fill()
-                ctx.strokeStyle = "#222222"
+                ctx.strokeStyle = Theme.icons
                 ctx.lineWidth = 2
                 ctx.stroke()
 
