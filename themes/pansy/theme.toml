@@ -119,7 +119,7 @@ blur_passes =   3
 blur_opacity =  "@kitty.window_opacity"
 
 active_gradient =    ["@colors.bright.purple", "@colors.special.active_border"]
-inactive_gradient =  ["@colors.special.inactive_border", "@colors.bright.black"]
+inactive_gradient =  ["@colors.special.inactive_border", "@colors.normal.purple"]
 angle =              225
 
 shadow_enabled =  true
