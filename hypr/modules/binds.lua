@@ -27,7 +27,8 @@ hl.bind(vars.mainMod .. " + right", hl.dsp.focus({direction = "right"}))
 hl.bind(vars.mainMod .. " + up", hl.dsp.focus({direction = "up"}))
 hl.bind(vars.mainMod .. " + down", hl.dsp.focus({direction = "down"}))
 hl.bind(vars.mainMod .. " + J", hl.dsp.layout("togglesplit"))
-
+hl.bind(vars.mainMod .. " + backslash", hl.dsp.workspace.toggle_special("secret"))
+hl.bind(vars.mainMod .. " + SHIFT + backslash", hl.dsp.window.move({ workspace = "special:secret" }))
 --workspaces system_binds
 
 hl.bind(vars.mainMod .. " + TAB", func.changeMonitor) --Change monitor

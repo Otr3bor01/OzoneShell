@@ -18,3 +18,5 @@ end
 for i=6,10 do
     hl.workspace_rule({ workspace = tostring(i), monitor = "DP-2", persistent = true})
 end
+
+hl.workspace_rule({workspace = "special:secret"})

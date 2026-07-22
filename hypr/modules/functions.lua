@@ -1,6 +1,7 @@
 local secondMonitor = false
 local targetMonitor = ""
 
+
 local function targetMonitorUpdate(secMon)
     local tarMon = ""
     if secMon then
@@ -30,8 +31,21 @@ local function getSecondMonitor()
     return secondMonitor
 end
 
+local function updateSecretWorkspaceFile(ws)
+    if not ws or not ws.name then return end
+    local isSpecial = ws.name:match("^special:") ~= nil
+    local f = io.open("/tmp/hypr_secretWorkspace", "w")
+    if f then
+        f:write(isSpecial and "true" or "false")
+        f:close()
+    end
+end
 
---Function export
+hl.on("workspace.active", function(ws) --Check for changes 
+    hl.notification.create({ text = "workspace.active: " .. tostring(ws and ws.name), timeout = 3000 }) --Debug
+    updateSecretWorkspaceFile(ws)
+end)
+
 return {
     targetMonitorUpdate = targetMonitorUpdate,
     updateState = updateState,

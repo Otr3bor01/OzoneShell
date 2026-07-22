@@ -10,6 +10,7 @@ Rectangle {
     property int wsMin: 1
     property int wsMax: 5
     property string activeMonitorValue: "false"
+    property bool secret: false
 
     implicitWidth: wsRow.width
 
@@ -36,4 +37,13 @@ Rectangle {
             delegate: WorkspaceButton {}             
         }
     }
+    //Rectangle { //Still not working :*)
+    //    property var specialWs: Hyprland.workspaces.values.find(w => w.name === "special:secret")
+    //    property bool specialActive: !!(specialWs && specialWs.active)
+    //    anchors.fill: parent
+    //    radius: Theme.panelRadius
+    //    color: specialActive ? Theme.background : Qt.alpha("#000000", 0.0)
+    //    border.color: Theme.activeBorder
+    //    border.width: Theme.panelBorderWidth + 2
+    //}
 }
