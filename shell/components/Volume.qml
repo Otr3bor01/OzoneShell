@@ -131,11 +131,11 @@ Item {
         ]
 
         Text {
-            property var volSym: !vol.sink ? "󰖁 " :
-                                vol.sink.audio.muted ? "󰝟 ":
-                                (vol.currentVolume*100) === 0 ? "󰖁 " :
-                                (vol.currentVolume * 100) < 33 ? "󰕿 ":
-                                (vol.currentVolume * 100) < 66 ? "󰖀 ": "󰕾 "
+            property var volSym: !vol.sink ? "\u{f0581}" :
+                                vol.sink.audio.muted ? "\u{f075f} ":
+                                (vol.currentVolume*100) === 0 ? "\u{f0581} " :
+                                (vol.currentVolume * 100) < 33 ? "\u{f057f} ":
+                                (vol.currentVolume * 100) < 66 ? "\u{f0580} ": "\u{f057e} "
 
             anchors.centerIn: parent
             text: volSym + Math.round(vol.currentVolume*100) + "%"

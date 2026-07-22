@@ -115,7 +115,7 @@ Item {
             spacing: 4
 
             Text {
-                text: "󰚰"
+                text: "\u{f06b0}"
                 font.pixelSize: Theme.fontSizeNormal
                 font.family: Theme.fontFamilyIcons
                 color: Theme.icons

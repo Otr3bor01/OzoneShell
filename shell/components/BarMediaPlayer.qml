@@ -21,7 +21,7 @@ Item {
         spacing: 6
 
         Text {
-            text: ""
+            text: "\uf130"
             font.pixelSize: Theme.fontSizeNormal
             font.family: Theme.fontFamilyIcons
             color: Theme.icons
@@ -42,7 +42,7 @@ Item {
         }
 
         Text {
-            text: ""
+            text: "\uf001"
             font.pixelSize: Theme.fontSizeNormal
             font.family: Theme.fontFamilyIcons
             color: Theme.icons
@@ -62,8 +62,8 @@ Item {
         }
 
         Text { // previous
-            text: "󰒮"
-            font.pixelSize: 30
+            text: "\uf048"
+            font.pixelSize: 23
             color: previousMouse.containsMouse ? Theme.brightWhite : Theme.icons
 
             MouseArea {
@@ -87,7 +87,7 @@ Item {
 
                 Text {
                     anchors.centerIn: parent
-                    text: "󰎇"
+                    text: "\u{f0387}"
                     visible: coverImage.status !== Image.Ready
                     color: Theme.background
                     font.bold: true
@@ -118,7 +118,7 @@ Item {
 
             Text { // play/pause icon
                 anchors.centerIn: mask
-                text: root.activePlayer?.playbackState === MprisPlayer.Playing ? "" : ""
+                text: root.activePlayer?.playbackState === MprisPlayer.Playing ? "\uf04c" : "\uf04b"
                 color: playMouse.containsMouse ? Theme.brightWhite : Theme.icons
                 font.bold: true
                 font.pixelSize: 15
@@ -156,8 +156,8 @@ Item {
         }
 
         Text { // next
-            text: "󰒭"
-            font.pixelSize: 30
+            text: "\uf051"
+            font.pixelSize: 23
             color: nextMouse.containsMouse ? Theme.brightWhite : Theme.icons
 
             MouseArea {

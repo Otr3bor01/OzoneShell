@@ -58,7 +58,7 @@ Item{   //menù work in progress
     }
     Text {
         anchors.centerIn: archMenu
-        text: "󰣇"
+        text: "\ue732"
         font.pixelSize : 20
         color: Theme.icons
     }

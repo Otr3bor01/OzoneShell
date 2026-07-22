@@ -51,7 +51,7 @@ Item{
     Text {
         id: testo
         anchors.centerIn: exit
-        text: "󰅚"
+        text: "\u{f015a}"
         font.pixelSize : 20
         color: Qt.alpha(Theme.icons, 0.5)
         Behavior on font.pixelSize {

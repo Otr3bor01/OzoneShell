@@ -23,7 +23,7 @@ Item {
         spacing: 2
 
         Text { // clock icon
-            text: ""
+            text: "\uf017"
             color: Theme.icons
             font.pixelSize: 18
             font.bold: true
@@ -43,7 +43,7 @@ Item {
         }
 
         Text { // calendar icon
-            text: ""
+            text: "\uf073"
             color: Theme.icons
             font.pixelSize: 18
             font.bold: true

@@ -60,7 +60,7 @@ Item{
     }
     Text {
         anchors.centerIn: powerOffRect
-        text: "⏻"
+        text: "\uf011"
         font.pixelSize : 20
         color: Theme.icons
     }

@@ -60,7 +60,7 @@ Item{
     }
     Text {
         anchors.centerIn: rebootRect
-        text: "󰜉"
+        text: "\uf021"
         font.pixelSize : 20
         color: Theme.icons
     }
