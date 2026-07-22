@@ -9,21 +9,15 @@ Item{
     height: width
     Rectangle {
         id: exit
-        implicitWidth: parent.width - 5
+        implicitWidth: parent.width
         implicitHeight: implicitWidth
         radius: implicitWidth / 2
         anchors.centerIn: parent
 
-        color: Qt.alpha(Theme.background, Theme.panelOpacity)
-        border.color: Theme.inactiveBorder
-        border.width: Theme.panelBorderWidth
+        color: Qt.alpha("#000000", 0)
+        border.color: Qt.alpha("#000000", 0)
 
-        Behavior on implicitWidth {
-            NumberAnimation {
-                duration: 150
-                easing.type: Easing.OutCubic
-            }
-        }
+
 
         MouseArea {
             id: exitMouse
@@ -37,10 +31,9 @@ Item{
                 name: "hovered"
                 when: exitMouse.containsMouse
                 PropertyChanges {
-                    target: exit
-                    implicitWidth: root.width +5
-                    border.color: Theme.activeBorder
-                    border.width: Theme.panelBorderWidth + 0.5
+                    target: testo
+                    font.pixelSize: 30
+                    color: Theme.icons
                 }
             },
 
@@ -48,18 +41,24 @@ Item{
                 name: "default"
                 when: !exitMouse.containsMouse
                 PropertyChanges {
-                    target: exit
-                    implicitWidth: root.width
-                    border.color: Theme.inactiveBorder
-                    border.width: Theme.panelBorderWidth
+                    target: testo
+                    font.pixelSize: 20
+                    color: Qt.alpha(Theme.icons, 0.5)
                 }
             }
         ]
     }
     Text {
+        id: testo
         anchors.centerIn: exit
         text: "󰅚"
         font.pixelSize : 20
-        color: Theme.icons
+        color: Qt.alpha(Theme.icons, 0.5)
+        Behavior on font.pixelSize {
+            NumberAnimation {
+                duration: 100
+                easing.type: Easing.OutCubic
+            }
+       }
     }
 }
