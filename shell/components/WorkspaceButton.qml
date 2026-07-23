@@ -9,6 +9,7 @@ Rectangle {
     width: 50
     height: 10
     radius: 5
+    transformOrigin: Item.center
 
     color: modelData.active
         ? Qt.alpha(Theme.accent, Theme.panelOpacity)
@@ -24,6 +25,33 @@ Rectangle {
     // Some basic animations
     Behavior on color { ColorAnimation { duration: 150 } }
     Behavior on border.color { ColorAnimation { duration: 150 } }
+
+    SequentialAnimation {
+        id: bounce
+        NumberAnimation {
+            target: root
+            property: "scale"
+            to: 1.25
+            duration: 100
+            easing.type: Easing.OutQuad
+        }
+        NumberAnimation {
+            target: root
+            property: "scale"
+            to: 1
+            duration: 180
+            easing.type: Easing.OutBack
+            easing.overshoot: 3
+        }
+    }
+
+    Connections {
+        target: modelData
+        function onActiveChanged() {
+            if (modelData.active) bounce.start()
+        }
+    }
+
 
     MouseArea {
         id: mouseArea
