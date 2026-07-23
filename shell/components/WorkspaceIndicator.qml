@@ -10,7 +10,11 @@ Rectangle {
     property int wsMin: 1
     property int wsMax: 5
     property string activeMonitorValue: "false"
-    property bool secret: false
+    required property string monitorName
+
+    property var monitorObj: Hyprland.monitors.values.find(m => m.name === root.monitorName)
+    property var specialWs: monitorObj ? monitorObj.lastIpcObject.specialWorkspace : null
+    readonly property bool specialActive: !!specialWs && specialWs.name !== ""
 
     implicitWidth: wsRow.width
 
@@ -25,6 +29,15 @@ Rectangle {
         watchChanges: true
         onFileChanged: reload()
     }
+    
+    Connections {
+        target: Hyprland
+        function onRawEvent(event) {
+            if (event.name === "activespecial") {
+                Hyprland.refreshMonitors()
+            }
+        }
+    }
 
     Row {
         id: wsRow
@@ -37,13 +50,35 @@ Rectangle {
             delegate: WorkspaceButton {}             
         }
     }
-    //Rectangle { //Still not working :*)
-    //    property var specialWs: Hyprland.workspaces.values.find(w => w.name === "special:secret")
-    //    property bool specialActive: !!(specialWs && specialWs.active)
-    //    anchors.fill: parent
-    //    radius: Theme.panelRadius
-    //    color: specialActive ? Theme.background : Qt.alpha("#000000", 0.0)
-    //    border.color: Theme.activeBorder
-    //    border.width: Theme.panelBorderWidth + 2
-    //}
+    Rectangle {
+        anchors.fill: parent
+        color: Qt.alpha(Theme.background, 1)
+        radius: Theme.panelRadius
+        border.color: monitorState.text().trim() === root.activeMonitorValue ? Theme.activeBorder : Theme.inactiveBorder
+        border.width: Theme.panelBorderWidth + 2
+
+        scale: root.specialActive ? 1 : 0
+        opacity: root.specialActive ? 1 : 0
+        transformOrigin: Item.Center
+
+        Behavior on opacity { NumberAnimation { duration: 120 } }
+        Behavior on scale {
+            NumberAnimation {
+                duration: 120
+                easing.type: root.specialActive ? Easing.OutBack : Easing.InBack
+                easing.overshoot: 0
+            }
+        }
+
+        Text {
+            id: secretText
+            anchors.centerIn: parent
+            text: "SECRET"
+            font.pixelSize: 20
+            font.bold: true
+            font.italic: true
+            font.letterSpacing: 20
+            color: Theme.accent
+        }
+    }
 }

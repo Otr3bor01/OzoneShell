@@ -30,7 +30,7 @@ PanelWindow {
         wsMin: root.wsMin
         wsMax: root.wsMax
         activeMonitorValue: root.activeMonitorValue
-
+        monitorName: root.targetScreen.name
         anchors {
             left: parent.left
             top: parent.top
