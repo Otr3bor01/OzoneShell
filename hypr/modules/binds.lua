@@ -52,7 +52,7 @@ end
 
 
 
-hl.bind(vars.mainMod .. " + SHIFT + Tab", hl.dsp.window.move({ monitor = "+1" }))
+hl.bind(vars.mainMod .. " + SHIFT + Tab", func.changeMonitorAndMove)
 
 hl.bind(vars.mainMod .. " + SHIFT + left",  hl.dsp.window.swap({ direction = "left" }))
 hl.bind(vars.mainMod .. " + SHIFT + right", hl.dsp.window.swap({ direction = "right" }))

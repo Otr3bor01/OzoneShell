@@ -27,6 +27,13 @@ local function changeMonitor()
     hl.dispatch(hl.dsp.focus({monitor = targetMonitor}))
 end
 
+local function changeMonitorAndMove()
+    secondMonitor = not secondMonitor
+    updateState()
+    targetMonitor = targetMonitorUpdate(secondMonitor)
+    hl.dispatch(hl.dsp.window.move({ monitor = "+1" }))
+end
+
 local function getSecondMonitor()
     return secondMonitor
 end
@@ -36,4 +43,5 @@ return {
     updateState = updateState,
     changeMonitor = changeMonitor,
     getSecondMonitor = getSecondMonitor,
+    changeMonitorAndMove = changeMonitorAndMove,
 }
