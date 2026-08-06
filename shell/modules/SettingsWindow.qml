@@ -155,8 +155,8 @@ PanelWindow {
                     }
                 }
 
-                BrightnessSlider { label: "Luminosità DP-1"; displayNum: 1 }
-                BrightnessSlider { label: "Luminosità DP-2"; displayNum: 2 }
+                BrightnessSlider { label: "DP-1:  "; displayNum: 1 }
+                BrightnessSlider { label: "DP-2:  "; displayNum: 2 }
 
                 Item { Layout.fillHeight: true }
 

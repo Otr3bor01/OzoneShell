@@ -62,6 +62,7 @@ Item{
         anchors.centerIn: nightLightRect
         text: "\u{f1a4c}"
         font.pixelSize : 20
+        font.family: Theme.fontFamilyIcons
         color: NightLightState.active ? Theme.normalBlack :Theme.icons
     }
 }

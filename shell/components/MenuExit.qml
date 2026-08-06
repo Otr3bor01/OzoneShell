@@ -53,6 +53,7 @@ Item{
         anchors.centerIn: exit
         text: "\u{f015a}"
         font.pixelSize : 20
+        font.family: Theme.fontFamilyIcons
         color: Qt.alpha(Theme.icons, 0.5)
         Behavior on font.pixelSize {
             NumberAnimation {

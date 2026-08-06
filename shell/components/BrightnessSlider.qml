@@ -5,7 +5,7 @@ import qs.singletons
 
 RowLayout {
     id: root
-    property string label: "Brightness"
+    property string label: ""
     property int displayNum: 1
     property int value: displayNum === 1 ? BrightnessState.brightnessDP1 : BrightnessState.brightnessDP2
 
@@ -13,7 +13,7 @@ RowLayout {
     Layout.fillWidth: true
 
     Text {
-        text: root.label + ":"
+        text: root.label + Math.round(slider.value) + " \u{f0cf2}"
         color: Theme.foreground
         Layout.alignment: Qt.AlignVCenter
     }
@@ -54,8 +54,19 @@ RowLayout {
         }
     }
     Text {
-        text: Math.round(slider.value) + "%"
-        color: Theme.foreground
+        text: Math.round(slider.value) == 0 ? "\u{f00da}" :
+                Math.round(slider.value) < 20 ? "\u{f00db}" : 
+                Math.round(slider.value) < 40 ? "\u{f00dc}" :
+                Math.round(slider.value) < 60 ? "\u{f00dd}" : 
+                Math.round(slider.value) < 80 ? "\u{f00de}" :
+                Math.round(slider.value) < 100 ? "\u{f00df}" :
+                Math.round(slider.value) == 100 ? "\u{f00e0}" :
+                "?"
+        font.pixelSize: 24
+        anchors.right: parent.right
+        anchors.verticalCenter: parent.verticalCenter
+        font.family: Theme.fontFamilyIcons
+        color: Theme.icons
         Layout.preferredWidth: 40
     }
 }

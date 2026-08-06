@@ -63,5 +63,6 @@ Item{
         text: "\uf021"
         font.pixelSize : 20
         color: Theme.icons
+        font.family: Theme.fontFamilyIcons
     }
 }
