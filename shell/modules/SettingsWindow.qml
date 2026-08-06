@@ -93,66 +93,75 @@ PanelWindow {
         radius: 12
         border.color: Theme.border
         border.width: Theme.panelBorderWidth * 3
-
-        ColumnLayout {
+        RowLayout {
             anchors.left: parent.left
             anchors.right: parent.right
             anchors.verticalCenter: parent.verticalCenter
             anchors.leftMargin: 10
             anchors.rightMargin: 10
             spacing: 15
-
-            // Audio Feedback Selector
-            RowLayout {
-                Layout.fillWidth: true
-                spacing: 10
-
-                Text {
-                    text: "Audio Feedback:"
-                    color: Theme.foreground
-                    Layout.alignment: Qt.AlignVCenter
-                }
-
-                ComboBox {
-                    id: audioFeedbackCombo
-                    model: audioFeedbackOptions
-                    currentIndex: 0
-                    Layout.fillWidth: true
-
-                    onCurrentValueChanged: {
-                        console.log("ComboBox value changed to:", currentValue)
-                        // Evita di salvare se il valore non è cambiato
-                        if (currentValue !== Settings.audioFeedback) {
-                            saveSettings()
-                        }
-                    }
-
-                    contentItem: Text {
-                        leftPadding: 10
-                        text: audioFeedbackCombo.currentText
-                        color: Theme.foreground
-                        verticalAlignment: Text.AlignVCenter
-                    }
-
-                    background: Rectangle {
-                        color: Qt.alpha(Theme.background, 0.8)
-                        border.color: Theme.border
-                        border.width: 1
-                        radius: 6
-                    }
-                }
-            }
-
-            Item { Layout.fillHeight: true }
-
             ColumnLayout {
-                Layout.fillWidth: true
+                Layout.fillHeight: true
                 spacing: 10
+                Layout.preferredWidth: 40
+
                 PowerOffButton{}
                 RebootButton{}
+                Item { Layout.fillHeight: true}
             }
-        }
+            
+            ColumnLayout {
+                spacing: 15
 
+                // Audio Feedback Selector
+                RowLayout {
+                    Layout.fillWidth: true
+                    spacing: 10
+
+                    Text {
+                        text: "Audio Feedback:"
+                        color: Theme.foreground
+                        Layout.alignment: Qt.AlignVCenter
+                    }
+
+                    ComboBox {
+                        id: audioFeedbackCombo
+                        model: audioFeedbackOptions
+                        currentIndex: 0
+                        Layout.fillWidth: true
+
+                        onCurrentValueChanged: {
+                            console.log("ComboBox value changed to:", currentValue)
+                            // Evita di salvare se il valore non è cambiato
+                            if (currentValue !== Settings.audioFeedback) {
+                                saveSettings()
+                            }
+                        }
+
+                        contentItem: Text {
+                            leftPadding: 10
+                            text: audioFeedbackCombo.currentText
+                            color: Theme.foreground
+                            verticalAlignment: Text.AlignVCenter
+                        }
+
+                        background: Rectangle {
+                            color: Qt.alpha(Theme.background, 0.8)
+                            border.color: Theme.border
+                            border.width: 1
+                            radius: 6
+                        }
+                    }
+                }
+
+                BrightnessSlider { label: "Luminosità DP-1"; displayNum: 1 }
+                BrightnessSlider { label: "Luminosità DP-2"; displayNum: 2 }
+
+                Item { Layout.fillHeight: true }
+
+            }
+
+        }
         MenuExit{
             anchors.top: parent.top
             anchors.right: parent.right

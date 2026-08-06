@@ -13,3 +13,4 @@ ThemeOrangeMenu 1.0 ThemeOrangeMenu.qml
 PowerOffButton 1.0 PowerOffButton.qml
 RebootButton 1.0 RebootButton.qml
 MenuExit 1.0 MenuExit.qml
+BrightnessSlider 1.0 BrightnessSlider.qml

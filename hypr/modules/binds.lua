@@ -70,6 +70,10 @@ hl.bind(vars.mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot --freeze -m re
 hl.bind("XF86AudioRaiseVolume", hl.dsp.exec_cmd("wpctl set-volume -l 1 @DEFAULT_AUDIO_SINK@ 5%+"), { locked = true, repeating = true })
 hl.bind("XF86AudioLowerVolume", hl.dsp.exec_cmd("wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"),      { locked = true, repeating = true })
 hl.bind("XF86AudioMute",        hl.dsp.exec_cmd("wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"),     { locked = true, repeating = true })
+
+hl.bind("SHIFT + XF86AudioRaiseVolume", function () func.brightness("up") end)
+hl.bind("SHIFT + XF86AudioLowerVolume", function () func.brightness("down") end)
+
 hl.bind(vars.mainMod .. " + F3",  hl.dsp.exec_cmd("playerctl next"),       { locked = true })
 hl.bind(vars.mainMod .. " + F2", hl.dsp.exec_cmd("playerctl play-pause"), { locked = true })
 hl.bind(vars.mainMod .. " + F1",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })

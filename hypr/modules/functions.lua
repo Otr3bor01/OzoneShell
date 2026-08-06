@@ -38,7 +38,15 @@ local function getSecondMonitor()
     return secondMonitor
 end
 
+
+
+local function brightness(direction)
+    local mon = hl.get_active_monitor()
+    hl.dispatch(hl.dsp.exec_cmd('qs ipc call brightness ' .. tostring(direction) .. ' ' .. tostring(mon.name)))
+end
+
 return {
+    brightness = brightness,
     targetMonitorUpdate = targetMonitorUpdate,
     updateState = updateState,
     changeMonitor = changeMonitor,
