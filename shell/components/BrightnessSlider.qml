@@ -63,8 +63,6 @@ RowLayout {
                 Math.round(slider.value) == 100 ? "\u{f00e0}" :
                 "?"
         font.pixelSize: 24
-        anchors.right: parent.right
-        anchors.verticalCenter: parent.verticalCenter
         font.family: Theme.fontFamilyIcons
         color: Theme.icons
         Layout.preferredWidth: 40
