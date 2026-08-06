@@ -40,7 +40,8 @@ RowLayout {
                 width: slider.visualPosition * parent.width
                 height: parent.height
                 radius: 2
-                color: Theme.foreground
+                color: Qt.alpha(Theme.icons, Theme.panelOpacity)
+                border.color: Theme.activeBorder
             }
         }
         handle: Rectangle {
@@ -49,8 +50,8 @@ RowLayout {
             width: 16
             height: 16
             radius: 8
-            color: Theme.foreground
-            border.color: Theme.border
+            color: Theme.background
+            border.color: Theme.activeBorder
         }
     }
     Text {
@@ -65,6 +66,5 @@ RowLayout {
         font.pixelSize: 24
         font.family: Theme.fontFamilyIcons
         color: Theme.icons
-        Layout.preferredWidth: 40
     }
 }
