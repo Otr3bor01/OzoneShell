@@ -14,3 +14,4 @@ PowerOffButton 1.0 PowerOffButton.qml
 RebootButton 1.0 RebootButton.qml
 MenuExit 1.0 MenuExit.qml
 BrightnessSlider 1.0 BrightnessSlider.qml
+NightLightButton 1.0 NightLightButton.qml

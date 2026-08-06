@@ -107,6 +107,7 @@ PanelWindow {
 
                 PowerOffButton{}
                 RebootButton{}
+                NightLightButton{}
                 Item { Layout.fillHeight: true}
             }
             

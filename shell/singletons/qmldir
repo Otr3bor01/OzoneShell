@@ -7,3 +7,4 @@ singleton UiState 1.0 UiState.qml
 singleton ThemeIndex 1.0 ThemeIndex.qml
 singleton Paths 1.0 Paths.qml
 singleton BrightnessState 1.0 BrightnessState.qml
+singleton NightLightState 1.0 NightLightState.qml
