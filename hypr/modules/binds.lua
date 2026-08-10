@@ -13,6 +13,7 @@ hl.bind(vars.mainMod .. " + E", hl.dsp.exec_cmd(vars.terminal .. " -e " .. vars.
 hl.bind(vars.mainMod .. " + SHIFT + E", hl.dsp.exec_cmd(vars.fileManager_GUI))
 hl.bind(vars.mainMod .. " + R", hl.dsp.exec_cmd(vars.menu))
 hl.bind(vars.mainMod .. " + M", hl.dsp.exec_cmd(vars.musicPlayer))
+hl.bind(vars.mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("~/.local/bin/reaper-vital"))
 hl.bind(vars.mainMod .. " + F", hl.dsp.exec_cmd(vars.browser))
 hl.bind(vars.mainMod .. " + O", hl.dsp.exec_cmd(vars.notes)) --obsidian
 hl.bind(vars.mainMod .. " + SHIFT + O", hl.dsp.exec_cmd(vars.codeTextEditor)) --vscode
