@@ -14,7 +14,9 @@ hl.config({
         },
         dwindle = {
             preserve_split = true
+        },
+        cursor = {
+            no_hardware_cursors = true,
         }
-    
 })
 
