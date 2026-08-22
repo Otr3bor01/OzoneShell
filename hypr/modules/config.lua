@@ -16,7 +16,7 @@ hl.config({
             preserve_split = true
         },
         cursor = {
-            no_hardware_cursors = true,
+            no_hardware_cursors = false,
         }
 })
 
