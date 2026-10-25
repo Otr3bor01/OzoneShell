@@ -8,7 +8,7 @@ return {
     codeTextEditor = "code",
     textEditor = "nvim",
     browser = "firefox",
-    musicPlayer = "strawberry",
+    musicPlayer = "fooyin",
     lockscreen = "hyprlock",
     notes = "obsidian",
     toDo = "ao",
