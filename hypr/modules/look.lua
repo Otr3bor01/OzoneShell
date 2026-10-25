@@ -72,3 +72,10 @@ hl.animation({ leaf = "global",        enabled = true,  speed = 2,   bezier = "d
 
     --BORDER
     hl.animation({ leaf = "border",        enabled = true,  speed = 7, bezier = "easeOutQuint" })
+
+--window rules
+hl.window_rule({
+    name = "kitty-no-maximize",
+    match = { class = "^(kitty)$" },
+    suppress_event = "maximize",
+})
