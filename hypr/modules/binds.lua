@@ -80,3 +80,6 @@ hl.bind(vars.mainMod .. " + F2", hl.dsp.exec_cmd("playerctl play-pause"), { lock
 hl.bind(vars.mainMod .. " + F1",  hl.dsp.exec_cmd("playerctl previous"),   { locked = true })
 hl.bind(vars.mainMod .. " + less", hl.dsp.exec_cmd("qs ipc call themeSelector toggle"))
 hl.bind(vars.mainMod .. " + Escape", hl.dsp.exec_cmd("qs ipc call settingsWindow toggle"))
+
+--debug--
+hl.bind(vars.mainMod .. " + F8", function () func.debug() end)

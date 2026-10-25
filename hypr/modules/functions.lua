@@ -45,7 +45,24 @@ local function brightness(direction)
     hl.dispatch(hl.dsp.exec_cmd('qs ipc call brightness ' .. tostring(direction) .. ' ' .. tostring(mon.name)))
 end
 
+local function sleep(a)
+    local sec = tonumber(os.clock() + a);
+    while (os.clock() < sec) do
+    end
+end
+
+local function debug()
+    hl.exec_cmd("kitty")
+    sleep(0.3)
+    hl.exec_cmd("kitty --hold -e cava &")
+    sleep(0.3)
+    hl.exec_cmd("kitty --hold -e tty-clock -c -C 5- &")
+    sleep(0.3)
+end
+
 return {
+    debug = debug,
+    sleep = sleep,
     brightness = brightness,
     targetMonitorUpdate = targetMonitorUpdate,
     updateState = updateState,
